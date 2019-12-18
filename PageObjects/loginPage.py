@@ -14,7 +14,7 @@ class loginPage():
         self.driver.find_element_by_xpath(self.textbox_password_xpath).send_keys(password)
 
     def clickonLogin(self):
-        self.driver.find_element_by_xpath(self.textbox_username_xpath).click()
+        self.driver.find_element_by_xpath(self.button_login_xpath).click()
 
 
 

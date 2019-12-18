@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SmokeTestWebUI.iml" filepath="$PROJECT_DIR$/.idea/SmokeTestWebUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qa-selenium/.idea/qa-selenium.iml" filepath="$PROJECT_DIR$/../qa-selenium/.idea/qa-selenium.iml" />
     </modules>
   </component>
 </project>

@@ -8,7 +8,7 @@ from PageObjects.loginPage import loginPage
 
 
 class LoginTest(unittest.TestCase):
-    baseURL = "https://marketplace.staging.crosslend.net/"#"https://admin@crosslend.com:123456XL@marketplace.staging.crosslend.net/"
+    baseURL = "https://crosslend:123456XL@marketplace.staging.crosslend.net/"#"https://admin@crosslend.com:123456XL@marketplace.staging.crosslend.net/"
 
     driver = webdriver.Chrome(executable_path="C://Users//User//PycharmProjects//SmokeTestWebUI//drivers//chromedriver.exe")
     username = "admin@crosslend.com"
@@ -18,17 +18,19 @@ class LoginTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver.get(cls.baseURL)
-        time.sleep(4)
+        time.sleep(2)
         cls.driver.maximize_window()
-        cls.driver.set_page_load_timeout(5)
+
 
     def test_login(self):
         lp= loginPage(self.driver)
         lp.setUsername(self.username)
         lp.setpassword(self.password)
+        self.driver.save_screenshot("C://Users//User//PycharmProjects//SmokeTestWebUI//ScreenShots//SmokeTest.png")
         lp.clickonLogin()
-        time.sleep(3)
         self.assertEqual("Marketplace", self.driver.title, "Webpage Title does not match")
+        time.sleep(10)
+        self.driver.save_screenshot("C://Users//User//PycharmProjects//SmokeTestWebUI//ScreenShots//pendingAccountPageTest.png")
 
     @classmethod
     def tearDown(cls):
